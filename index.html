@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="'en">
+  <head>
+    <meta name="'viewport" content ='width=device-width initial-scale='1.0'>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="./assets/logo.svg" />
+    <title>Yatzy - Play And Have Fun</title>
+  </head>
+  <body>
+ 
+    <header>
+      <img src="./assets/logo.svg" class="logo" alt="logo yatzy" />
+      <button class="but butres"><img src="./assets/RESET.png"  alt="RESET "></button>
+    </header>
+    <div class="gameContainer">
+      <div class="gameHeader">
+        <div class="player player1" id="scbp1">PLAYER 1</div>
+        <div class="scoreTag">
+          <span style="color: white;"">P1</span>
+          <span class="notes">
+          <div class="score sp1">0</div>
+          <span>-</span>
+          <div class="score sp2">0</div>
+          </span>
+          <span style="color: white;">P2</span>
+        </div>
+        <div class="player player2 hidden" id="scbp2">PLAYER 2</div>
+      </div>
+
+      <div class="gamzone player1">
+        <div class="sect1">
+          <div class="elemGame">
+            <span>ONES</span>
+            <div class="RepZone" id="p1-1">0</div>
+            <div class="RepZone" id="p2-1">0</div>
+
+          </div>
+          <div class="elemGame">
+            <span>TWOS</span>
+            <div class="RepZone" id="p1-2">0</div>
+            <div class="RepZone" id="p2-2">0</div>
+          </div>
+          <div class="elemGame">
+            <span>THREES</span>
+            <div class="RepZone" id="p1-3">0</div>
+            <div class="RepZone" id="p2-3">0</div>
+          </div>
+          <div class="elemGame">
+            <span>FOURS</span>
+            <div class="RepZone" id="p1-4">0</div>
+            <div class="RepZone" id="p2-4">0</div>
+          </div>
+          <div class="elemGame">
+            <span>FIVES</span>
+            <div class="RepZone" id="p1-5">0</div>
+            <div class="RepZone" id="p2-5">0</div>
+          </div>
+          <div class="elemGame">
+            <span>SIXES</span>
+            <div class="RepZone" id="p1-6">0</div>
+            <div class="RepZone" id="p2-6">0</div>
+          </div>
+          <div class="bonus">
+            <span>BONUS</span>
+            <div class="zoneBon">
+            <div class="RepZone" style="margin-bottom: -6px;" id="p1-bonus">0</div>
+            <span class="cumulp1 cumul"> 0 </span>
+            <span class="cum-plaf"> / 63</span>
+            </div>
+
+            <div class="zoneBon">
+            <div class="RepZone" style="margin-bottom: -6px;" id="p2-bonus">0</div>
+            <span class="cumulp2 cumul"> 0 </span>
+            <span class="cum-plaf"> / 63</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="sect2">
+          <div class="elemGame">
+            <span>THREE OF KIND</span>
+            <div class="RepZone" id="p1-3X">0</div>
+            <div class="RepZone" id="p2-3X">0</div>
+
+          </div>
+          <div class="elemGame">
+            <span>FOUR OF KIND</span>
+            <div class="RepZone" id="p1-4X">0</div>
+            <div class="RepZone" id="p2-4X">0</div>
+          </div>
+          <div class="elemGame">
+            <span>FULL HOUSE</span>
+            <div class="RepZone" id="p1-FH">0</div>
+            <div class="RepZone" id="p2-FH">0</div>
+          </div>
+          <div class="elemGame">
+            <span>SMALL STRAIGHT</span>
+            <div class="RepZone" id="p1-SS">0</div>
+            <div class="RepZone" id="p2-SS">0</div>
+          </div>
+          <div class="elemGame">
+            <span>LARGE STRAIGHT</span>
+            <div class="RepZone" id="p1-LS">0</div>
+            <div class="RepZone" id="p2-LS">0</div>
+          </div>
+          <div class="elemGame">
+            <span>YATZEEH !</span>
+            <div class="RepZone" id="p1-YAT">0</div>
+            <div class="RepZone" id="p2-YAT">0</div>
+          </div>
+          <div class="elemGame">
+            <span>CHANCE</span>
+            <div class="RepZone" id="p1-CH">0</div>
+            <div class="RepZone" id="p2-CH">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="buttons-set">
+      <img id="1dice" src="./assets/no-dice.svg" alt="dice 1" />
+      <img id="2dice" src="./assets/no-dice.svg" alt="dice 1" />
+      <img id="3dice" src="./assets/no-dice.svg" alt="dice 1" />
+      <img id="4dice" src="./assets/no-dice.svg" alt="dice 1" />
+      <img id="5dice" src="./assets/no-dice.svg" alt="dice 1" />
+      </div>
+      <div class="footer-buttons-set">
+        <button class="but butrepl">PLAY</button>
+        <button class="but butplac">PLACE</button>
+    </div>
+    </footer>
+
+   <div class="hide endgame">
+    <div class="comp-win">
+      <section id="scFip1">
+        <div class="aff player1">P1</div>
+        <div id="scp1">0</div>
+      </section>
+      <section id="scFip2">
+        <div class="aff player2">P2</div>
+        <div id="scp2">0</div>
+      </section>
+    </div>
+    <div class="overlay"></div>
+    </div>
+
+
+    <div class="reset hide">
+      <div class="reset-field">
+        <span > Do you want to end the game ?</span>
+        <div class="butt-reset">
+          <button class="butplac but" id="YYRES">YES</button>
+          <button class="butrepl but" id="NORES">NO</button>
+        </div>
+      </div>
+      <div class="overlay OVRES"></div>
+      </div>
+
+  </body>
+  <script src="./script.js"></script>
+</html>
