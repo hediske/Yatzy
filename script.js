@@ -54,7 +54,6 @@ sumbonus = function () {
 calcMaxi = function () {
   let freqSum = [0, 0, 0, 0, 0, 0, 0];
   freqFill(freqSum);
-  console.log(freqSum);
   let ok3 = false;
   let ok4 = false;
   let ok2 = false;
@@ -99,8 +98,6 @@ showDices = function () {
       el.src = `./assets/dice-${sets[i - 1]}.svg`;
     }
   }
-
-  console.log(sets);
 };
 changeDice = function (el) {
   el.src.indexOf('grey') >= 0
@@ -254,7 +251,6 @@ resetSelectors = function () {
 updateSelectors = function () {
   for (let i = 1; i <= 6; i++) {
     const id = `${player}-${i}`;
-    console.log('comparaison');
     if (window['playedelem' + player].indexOf(id) === -1) {
       const el = document.getElementById(id);
       el.textContent = sumelem(i);
@@ -403,7 +399,6 @@ document.querySelector('.butrepl').addEventListener('click', () => {
       ignoreBut(x);
     }
   }
-  console.log(calcMaxi());
 });
 for (let i = 1; i <= 5; i++) {
   let el = document.getElementById(`${i}dice`);
@@ -434,25 +429,20 @@ sel.forEach(zone => {
 });
 
 document.querySelector('.butplac').addEventListener('click', () => {
-  console.log(selectedElem);
   if (selectedElem) {
     document.getElementById(selectedElem).classList.remove('clicked');
     document.getElementById(selectedElem).classList.add('selected');
     const x = `playedelem${player}`;
-    console.log(window);
     window[x].push(selectedElem);
-    console.log(window[x]);
     const i = selectedElem.substring(3);
     if (Number(i))
       window['tabMins' + player][Number(i) - 1] = Number(
         document.getElementById(selectedElem).textContent
       );
-    console.log(window['tabMins' + player]);
     window['score' + player] += Number(
       document.getElementById(selectedElem).textContent
     );
     toursNum--;
-    console.log(`remaining tours are : ${toursNum}`);
     updateBonus();
     updateScore();
     if (!toursNum) setTimeout(gameEnded, 500);
